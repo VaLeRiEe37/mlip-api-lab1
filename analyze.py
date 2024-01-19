@@ -2,9 +2,20 @@ from azure.cognitiveservices.vision.computervision import ComputerVisionClient
 from msrest.authentication import CognitiveServicesCredentials
 from azure.cognitiveservices.vision.computervision.models import OperationStatusCodes
 import time
+import config
 
-endpoint = "ENTER ENDPOINT HERE"
-key = "ENTER KEY HERE"
+# endpoint = "endpoint"
+# key = "key"
+
+# Instead of hardcoding, we can use the config.py file to store the endpoint and key, and import them here
+# we can also use environment variables to store the endpoint and key, like this:
+# import os
+# endpoint = os.environ["ENDPOINT"]
+# key = os.environ["KEY"]
+
+# I chose to use the config.py file here
+endpoint = config.ENDPOINT
+key = config.KEY
 
 credentials = CognitiveServicesCredentials(key)
 
